@@ -3,19 +3,16 @@
 
 name: Backend CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push, pull_request]
 
 defaults:
   run:
+    shell: bash
     working-directory: ./backend
 
 jobs:
   build:
-        
+ 
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,6 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: ./backend/package-lock.json
     - run: npm ci
     - run: npm run build
     - run: npm test
