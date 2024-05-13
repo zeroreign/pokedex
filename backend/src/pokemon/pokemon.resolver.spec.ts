@@ -18,14 +18,14 @@ describe('PokemonResolver', () => {
   });
 
   it('should be able to get a pokemon from a service', async () => {
-    const pokemonByName = await resolver.pokemon({name: 'bulbasaur'});
-    const pokemonById = await resolver.pokemon({id: 1});
+    const pokemonByName = await resolver.pokemon({ name: 'bulbasaur' });
+    const pokemonById = await resolver.pokemon({ id: 1 });
     expect(pokemonByName).toBeTruthy();
     expect(pokemonById).toBeTruthy();
   });
 
   it('should be able to return pokemon types', async () => {
-      const response = await resolver.types();
-      expect(response).toBeTruthy();
-    });
+    const response = await resolver.types();
+    expect(response).toBeTruthy();
+  });
 });

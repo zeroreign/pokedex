@@ -9,7 +9,7 @@ export class PokemonResolver {
 
   @Query()
   async pokemon(
-    @Args({type: () => GetPokemonQueryArgs}) args: GetPokemonQueryArgs
+    @Args({ type: () => GetPokemonQueryArgs }) args: GetPokemonQueryArgs,
   ) {
     return this.pokemonService.getPokemon(args.name ?? args.id);
   }
