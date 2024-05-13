@@ -1,0 +1,23 @@
+# This is an example to help with workflow if you are using CLI
+# Core Context
+# export REPOS_HOME=~/path/to/your/repos
+# alias repo='cd $REPOS'
+export POKEDEX_REPO=$REPOS_HOME/pokedex
+alias pokedex-repo="cd ${POKEDEX_REPO}"
+alias pokedex-profile-edit='code $POKEDEX_REPO/.pokedex_profile'
+alias pokedex-profile-load='source $POKEDEX_REPO/.pokedex_profile'
+
+# Repo Context
+alias pokedex='pokedex-repo'
+alias pokedex-edit='pokedex && code .'
+alias pokedex-run='pokedex-api-run && pokedex-app-run'
+
+# API Context
+alias pokedex-api='pokedex && cd backend'
+alias pokedex-api-edit='pokedex-api && code .'
+alias pokedex-api-run='pokedex-api && npm run start:dev&'
+
+# App Context
+alias pokedex-app='pokedex && cd frontend'
+alias pokedex-app-edit='pokedex-app && code .'
+alias pokedex-app-run='pokedex-app && npm run dev&'
