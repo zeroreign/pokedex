@@ -42,7 +42,8 @@ jobs:
     - name: Install Backend Dependencies
       run: | 
         npm ci &&
-        npm run build
+        npm run build && 
+        npm run start:prod --prefix ../backend/ &
       working-directory: ./backend
     - name: Install Frontend Dependencies
       run: | 
@@ -50,6 +51,4 @@ jobs:
         npm run lint &&
         npm run build
     - name: Run Jest Test
-      run: |
-        npm run start:prod --prefix ../backend/ &&
-        npm test -- --coverage
+      run: npm test -- --coverage
