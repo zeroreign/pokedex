@@ -44,7 +44,7 @@ jobs:
         npm ci --prefix &&
         npm run build &&
         npm start:prod
-      working-directory: ../backend
+      working-directory: ./backend
     - name: Install Frontend Dependencies
       run: | 
         npm ci &&
