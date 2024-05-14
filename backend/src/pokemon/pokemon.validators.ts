@@ -1,12 +1,16 @@
-import { registerDecorator, ValidationOptions, ValidationArguments } from 'class-validator';
+import {
+  registerDecorator,
+  ValidationOptions,
+  ValidationArguments,
+} from 'class-validator';
 
 /**
  * Validates that the property is the only query argument
- * @param validationOptions 
+ * @param validationOptions
  * @returns true if property is the only argument
  */
 export function IsOnlyQueryArg(validationOptions?: ValidationOptions) {
-  return function (object: Object, propertyName: string) {
+  return function (object: object, propertyName: string) {
     registerDecorator({
       name: 'isOnlyQueryArg',
       target: object.constructor,

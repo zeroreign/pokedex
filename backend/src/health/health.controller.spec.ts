@@ -18,7 +18,7 @@ describe('HealthController', () => {
   });
 
   it('should return "OK"', async () => {
-    const {details, error, info, status} = await controller.check();
+    const { details, error, info, status } = await controller.check();
     const expectedServerStatus = { info: 'Server is running', status: 'up' };
 
     expect(details.server).toEqual(expectedServerStatus);

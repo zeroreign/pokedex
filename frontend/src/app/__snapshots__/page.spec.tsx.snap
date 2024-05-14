@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders homepage unchanged 1`] = `
+<div>
+  <div>
+    <h1>
+      Pokedex
+    </h1>
+    <p>
+      Welcome to the Pokedex App
+    </p>
+  </div>
+</div>
+`;
