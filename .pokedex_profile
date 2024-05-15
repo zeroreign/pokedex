@@ -16,8 +16,10 @@ alias pokedex-run='pokedex-api-run && pokedex-app-run'
 alias pokedex-api='pokedex && cd backend'
 alias pokedex-api-edit='pokedex-api && code .'
 alias pokedex-api-run='pokedex-api && npm run start:dev&'
+alias pokedex-api-generate-types='npm run generate:api-types --prefix $POKEDEX_REPO/backend '
 
 # App Context
 alias pokedex-app='pokedex && cd frontend'
 alias pokedex-app-edit='pokedex-app && code .'
 alias pokedex-app-run='pokedex-app && npm run dev&'
+alias pokedex-app-copy-api-types='npm run copy-typings-to-frontend --prefix $POKEDEX_REPO/backend'
