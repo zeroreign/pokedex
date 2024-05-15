@@ -12,8 +12,8 @@ import { PokemonModule } from './pokemon/pokemon.module';
       typePaths: ['./**/*.graphql'],
       definitions: {
         path: join(process.cwd(), 'src/graphql.schema.types.ts'),
-      },
         emitTypenameField: true,
+      },
       playground: true, // There is no env for this. But in prod consider disabling it on your use case.
     }),
     HealthModule,
