@@ -3,7 +3,6 @@ import {
   ApolloClient,
   ApolloProvider,
   InMemoryCache,
-  HttpLink,
 } from "@apollo/client";
 import React from "react";
 import { ReactNode } from "react";
