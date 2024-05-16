@@ -9,7 +9,7 @@ exports[`Pokemon Details should render unchanged 1`] = `
       class="flex justify-between"
     >
       <h2>
-        #
+        # 
         94
       </h2>
       <h2>
