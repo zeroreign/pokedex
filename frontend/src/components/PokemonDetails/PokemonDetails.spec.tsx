@@ -15,12 +15,23 @@ describe("Pokemon Details", () => {
     };
     render(<PokemonDetails details={pokemonDetails} />);
 
-      screen.debug();
       expect(screen.getByRole("heading", { level: 2 , name: '# 94'})).toBeInTheDocument();
       expect( screen.getByRole("heading", { level: 2 , name: capitalize('gengar')})).toBeInTheDocument();
       expect(screen.getByText(capitalize(PokemonTypes.GHOST))).toBeInTheDocument();
       expect(screen.getByText(capitalize(PokemonTypes.POISON))).toBeInTheDocument();
       expect(screen.getByText("Weight: 405")).toBeInTheDocument();
       expect(screen.getByText("Height: 15")).toBeInTheDocument();
+  });
+
+  it("should render unchanged", async () => {
+    const pokemonDetails: PokemonDetailsType = {
+      id: 94,
+      name: "gengar",
+      types: [PokemonTypes.POISON, PokemonTypes.GHOST],
+      weight: 405,
+      height: 15,
+    };
+    const { container } = render(<PokemonDetails details={pokemonDetails} />);
+    expect(container).toMatchSnapshot();
   });
 });

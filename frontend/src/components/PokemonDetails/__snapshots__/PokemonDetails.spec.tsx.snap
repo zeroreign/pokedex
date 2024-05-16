@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokemon Details should render unchanged 1`] = `
+<div>
+  <div
+    class="bg-brown text-white font-mono tracking-wider relative"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <h2>
+        #
+        94
+      </h2>
+      <h2>
+        Gengar
+      </h2>
+    </div>
+    <ul
+      class="flex justify-evenly"
+    >
+      <li>
+        <p>
+          Poison
+        </p>
+      </li>
+      <li>
+        <p>
+          Ghost
+        </p>
+      </li>
+    </ul>
+    <div
+      class="flex justify-evenly space-x-8"
+    >
+      <p>
+        Height: 
+        15
+      </p>
+      <p>
+        Weight: 
+        405
+      </p>
+    </div>
+  </div>
+</div>
+`;
