@@ -25,68 +25,35 @@ describe("Screen Frame", () => {
     });
 
     it("should set the component default max width and height when not available", async () => {
-      const pokemon: Pokemon = {
-        name: "gengar",
-        image:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/94.svg",
-      } as const;
-      render(<FramedScreen pokemon={pokemon} />);
-      const pokemonImageElement = screen.getByRole("img", {
-        name: pokemon.name,
-      });
-      expect(pokemonImageElement).toBeInTheDocument();
-      expect(pokemonImageElement).toHaveAttribute("src", pokemon.image);
-      expect(pokemonImageElement).toHaveClass("max-w-5");
-      expect(pokemonImageElement).toHaveClass("max-h-5");
+      const { container } = render(<FramedScreen />);
+      const framedScreen = container.querySelector("#framed-screen");
+      expect(framedScreen).toBeInTheDocument();
+      expect(framedScreen).toHaveClass("max-w-5");
+      expect(framedScreen).toHaveClass("max-h-5");
     });
 
     it("should set the component max width when passed", async () => {
-      const pokemon: Pokemon = {
-        name: "gengar",
-        image:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/94.svg",
-      } as const;
-      render(<FramedScreen pokemon={pokemon} width={10}/>);
-      const pokemonImageElement = screen.getByRole("img", {
-        name: pokemon.name,
-      });
-      screen.debug();
-      expect(pokemonImageElement).toBeInTheDocument();
-      expect(pokemonImageElement).toHaveAttribute("src", pokemon.image);
-      expect(pokemonImageElement).toHaveClass("max-w-10");
-      expect(pokemonImageElement).toHaveClass("max-h-5");
+      const { container } = render(<FramedScreen width={10} />);
+      const framedScreen = container.querySelector("#framed-screen");
+      expect(framedScreen).toBeInTheDocument();
+      expect(framedScreen).toHaveClass("max-w-10");
+      expect(framedScreen).toHaveClass("max-h-5");
     });
 
     it("should set the component max height when passed", async () => {
-      const pokemon: Pokemon = {
-        name: "gengar",
-        image:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/94.svg",
-      } as const;
-      render(<FramedScreen pokemon={pokemon} height={10} />);
-      const pokemonImageElement = screen.getByRole("img", {
-        name: pokemon.name,
-      });
-      expect(pokemonImageElement).toBeInTheDocument();
-      expect(pokemonImageElement).toHaveAttribute("src", pokemon.image);
-      expect(pokemonImageElement).toHaveClass("max-w-5");
-      expect(pokemonImageElement).toHaveClass("max-h-10");
+      const { container } = render(<FramedScreen height={10} />);
+      const framedScreen = container.querySelector("#framed-screen");
+      expect(framedScreen).toBeInTheDocument();
+      expect(framedScreen).toHaveClass("max-w-5");
+      expect(framedScreen).toHaveClass("max-h-10");
     });
 
     it("should set the component max width and height when passed", async () => {
-      const pokemon: Pokemon = {
-        name: "gengar",
-        image:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/94.svg",
-      } as const;
-      render(<FramedScreen pokemon={pokemon} width={10} height={15} />);
-      const pokemonImageElement = screen.getByRole("img", {
-        name: pokemon.name,
-      });
-      expect(pokemonImageElement).toBeInTheDocument();
-      expect(pokemonImageElement).toHaveAttribute("src", pokemon.image);
-      expect(pokemonImageElement).toHaveClass("max-w-10");
-      expect(pokemonImageElement).toHaveClass("max-h-15");
+      const { container } = render(<FramedScreen width={10} height={15} />);
+      const framedScreen = container.querySelector("#framed-screen");
+      expect(framedScreen).toBeInTheDocument();
+      expect(framedScreen).toHaveClass("max-w-10");
+      expect(framedScreen).toHaveClass("max-h-15");
     });
   });
 
