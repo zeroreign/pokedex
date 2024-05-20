@@ -1,7 +1,7 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import PokemonDetails from "./PokemonDetails";
+import { render, screen } from "@testing-library/react";
+import PokemonDetails from "./intex";
 import { PokemonTypes } from "../PokemonAPIProvider/pokemon-api.types";
-import type { PokemonDetails as PokemonDetailsType } from "./PokemonDetails.types";
+import type { PokemonDetails as PokemonDetailsType } from "./types";
 import { capitalize } from "lodash";
 
 describe("Pokemon Details", () => {

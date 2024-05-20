@@ -1,5 +1,5 @@
 import React from "react";
-import type { PokemonDetailsProps } from "./PokemonDetails.types";
+import type { PokemonDetailsProps } from "./types";
 import { capitalize } from "lodash";
 
 const PokemonDetails = ({ details, className }: PokemonDetailsProps) => {
