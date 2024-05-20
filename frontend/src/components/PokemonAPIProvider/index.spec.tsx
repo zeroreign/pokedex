@@ -1,5 +1,5 @@
 import { render, renderHook, screen, waitFor } from "@testing-library/react";
-import PokemonAPIProvider from "./PokeonAPIProvider";
+import PokemonAPIProvider from ".";
 import { gql, useQuery } from "@apollo/client";
 
 describe("Pokemon API Provider", () => {

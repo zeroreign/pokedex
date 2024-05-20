@@ -2,7 +2,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import FramedScreen from ".";
 import { FramedScreenProps } from "./types";
 
-describe("Screen Frame", () => {
+describe("Framed Screen", () => {
   type Pokemon = Pick<Required<FramedScreenProps>["pokemon"], "name" | "image">;
   it("should default to blank screen", async () => {
     render(<FramedScreen pokemon={undefined} />);
