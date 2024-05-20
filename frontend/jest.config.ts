@@ -5,7 +5,7 @@ module.exports = {
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
-    "!<rootDir>/**/*.types.(ts|js)",
+    "!<rootDir>/**/*types.(ts|js)",
     "!<rootDir>/**/*layout.{js,jsx,ts,tsx}",
     "!**/node_modules/**",
     "!<rootDir>/out/**",
