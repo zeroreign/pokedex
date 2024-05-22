@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Pokemon Details should be blank when there are no details 1`] = `
+<div>
+  <div
+    class="bg-brown text-white font-mono tracking-wider relative"
+  />
+</div>
+`;
+
 exports[`Pokemon Details should render unchanged 1`] = `
 <div>
   <div
@@ -7,6 +15,7 @@ exports[`Pokemon Details should render unchanged 1`] = `
   >
     <div
       class="flex justify-between"
+      id="identifiers"
     >
       <h2>
         # 
@@ -18,6 +27,7 @@ exports[`Pokemon Details should render unchanged 1`] = `
     </div>
     <ul
       class="flex justify-evenly"
+      id="types"
     >
       <li>
         <p>
@@ -32,6 +42,7 @@ exports[`Pokemon Details should render unchanged 1`] = `
     </ul>
     <div
       class="flex justify-evenly space-x-8"
+      id="dimentions"
     >
       <p>
         Height: 
