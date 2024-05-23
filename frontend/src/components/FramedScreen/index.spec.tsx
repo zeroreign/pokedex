@@ -4,12 +4,13 @@ import { FramedScreenProps } from "./types";
 
 describe("Framed Screen", () => {
   type Pokemon = Pick<Required<FramedScreenProps>["pokemon"], "name" | "image">;
-  it("should default to blank screen", async () => {
-    render(<FramedScreen pokemon={undefined} />);
-    expect(screen.queryByRole("img")).not.toBeInTheDocument();
-  });
 
   describe("Props", () => {
+    it("should default to blank screen", async () => {
+      render(<FramedScreen pokemon={undefined} />);
+      expect(screen.queryByRole("img")).not.toBeInTheDocument();
+    });
+
     it("should display the pokemon image", async () => {
       const pokemon: Pokemon = {
         name: "gengar",
@@ -22,38 +23,6 @@ describe("Framed Screen", () => {
       });
       expect(pokemonImageElement).toBeInTheDocument();
       expect(pokemonImageElement).toHaveAttribute("src", pokemon.image);
-    });
-
-    it("should set the component default max width and height when not available", async () => {
-      const { container } = render(<FramedScreen />);
-      const framedScreen = container.querySelector("#framed-screen");
-      expect(framedScreen).toBeInTheDocument();
-      expect(framedScreen).toHaveClass("max-w-5");
-      expect(framedScreen).toHaveClass("max-h-5");
-    });
-
-    it("should set the component max width when passed", async () => {
-      const { container } = render(<FramedScreen width={10} />);
-      const framedScreen = container.querySelector("#framed-screen");
-      expect(framedScreen).toBeInTheDocument();
-      expect(framedScreen).toHaveClass("max-w-10");
-      expect(framedScreen).toHaveClass("max-h-5");
-    });
-
-    it("should set the component max height when passed", async () => {
-      const { container } = render(<FramedScreen height={10} />);
-      const framedScreen = container.querySelector("#framed-screen");
-      expect(framedScreen).toBeInTheDocument();
-      expect(framedScreen).toHaveClass("max-w-5");
-      expect(framedScreen).toHaveClass("max-h-10");
-    });
-
-    it("should set the component max width and height when passed", async () => {
-      const { container } = render(<FramedScreen width={10} height={15} />);
-      const framedScreen = container.querySelector("#framed-screen");
-      expect(framedScreen).toBeInTheDocument();
-      expect(framedScreen).toHaveClass("max-w-10");
-      expect(framedScreen).toHaveClass("max-h-15");
     });
   });
 

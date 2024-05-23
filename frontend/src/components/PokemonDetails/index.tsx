@@ -2,7 +2,7 @@ import React from "react";
 import type { PokemonDetailsProps } from "./types";
 import { capitalize } from "lodash";
 
-const PokemonDetails = ({ details, className }: PokemonDetailsProps) => {
+const PokemonDetails = ({ details }: PokemonDetailsProps) => {
   return (
     <div className={"bg-brown text-white font-mono tracking-wider relative"}>
       {details && (

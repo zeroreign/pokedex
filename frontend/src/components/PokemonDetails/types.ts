@@ -4,5 +4,4 @@ export type PokemonDetails = NonNullable<Pick<Required<Pokemon>, "id" | "name" |
 
 export interface PokemonDetailsProps {
   details?: PokemonDetails;
-  className?: string;
 }
