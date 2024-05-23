@@ -62,10 +62,10 @@ export default function Home() {
   });
 
   return (
-    <div className="bg-white h-screen flex">
-      <div className="flex flex-auto flex-col items-center justify-center bg-red max-">
-          <FramedScreen pokemon={pokemonImage?.pokemon} />
-          <PokemonDetails details={pokemonDetails?.details} />
+    <div className="bg-white h-screen flex md:flex md:flex-auto md:items-center md:justify-center">
+      <div className="flex flex-auto flex-col items-center justify-center bg-red md:max-w-sm md:min-h-[700px] static">
+        <FramedScreen pokemon={pokemonImage?.pokemon} />
+        <PokemonDetails details={pokemonDetails?.details} />
       </div>
     </div>
   );
