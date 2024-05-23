@@ -7,6 +7,4 @@ export type ImageErrorState = {
 
 export interface FramedScreenProps {
   pokemon?: Pick<Pokemon, "name" | "image">;
-  width?: number;
-  height?: number;
 }
