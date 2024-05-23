@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <PokemonAPIProvider>
-        <body className="bg-red">{children}</body>
+        <body>{children}</body>
       </PokemonAPIProvider>
     </html>
   );

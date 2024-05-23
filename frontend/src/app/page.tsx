@@ -1,7 +1,10 @@
 "use client";
 import FramedScreen from "@/components/FramedScreen";
 import { FramedScreenProps } from "@/components/FramedScreen/types";
-import { IQuery, Pokemon } from "@/components/PokemonAPIProvider/pokemon-api.types";
+import {
+  IQuery,
+  Pokemon,
+} from "@/components/PokemonAPIProvider/pokemon-api.types";
 import PokemonDetails from "@/components/PokemonDetails";
 import { PokemonDetailsProps } from "@/components/PokemonDetails/types";
 import { gql, useQuery } from "@apollo/client";
@@ -29,7 +32,7 @@ export default function Home() {
 
   type GetPokemonResponse = {
     pokemon: Awaited<ReturnType<IQuery["pokemon"]>>;
-  }
+  };
 
   const { loading, error, data } = useQuery<GetPokemonResponse>(GET_POKEMONT, {
     variables: { name: queryInput },
@@ -59,11 +62,11 @@ export default function Home() {
   });
 
   return (
-    <div>
-      <h1>Pokedex</h1>
-      <p>Welcome to the Pokedex App</p>
-      <FramedScreen pokemon={pokemonImage?.pokemon} />
-      <PokemonDetails details={pokemonDetails?.details} />
+    <div className="bg-white h-screen flex">
+      <div className="flex flex-auto flex-col items-center justify-center bg-red">
+          <FramedScreen pokemon={pokemonImage?.pokemon} />
+          <PokemonDetails details={pokemonDetails?.details} />
+      </div>
     </div>
   );
 }
