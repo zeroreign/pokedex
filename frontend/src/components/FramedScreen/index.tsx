@@ -33,8 +33,9 @@ const FramedScreen = ({
           <Image
             src={error.hasError ? "/unown-error.gif" : pokemon.image}
             alt={error.hasError ? error.errorLabel : pokemon.name}
-            width={96}
-            height={96}
+            width={100}
+            height={100}
+            unoptimized={true}
             onError={handleError}
           />
         )}
