@@ -10,15 +10,15 @@ exports[`App renders homepage unchanged 1`] = `
       Welcome to the Pokedex App
     </p>
     <div
-      class="bg-white relative py-8 px-6 border-double border-black rounded-bl-[2rem] rounded-t-[0.25rem] rounded-br[0.25rem] aspect-[4/3] max-w-5 max-h-5"
+      class="bg-white relative py-8 px-6 border-double border-black rounded-bl-[2rem] rounded-t-[0.25rem] rounded-br[0.25rem] aspect-[4/3] size-1/6"
       id="framed-screen"
     >
       <div
-        class="bg-black flex grow items-center justify-center relative text-white text-wrap aspect-auto rounded-[0.25rem]"
+        class="bg-black flex grow items-center justify-center relative text-white text-wrap rounded-[0.25rem] h-full w-full"
       />
     </div>
     <div
-      class="bg-brown text-white font-mono tracking-wider relative"
+      class="bg-brown text-white font-mono tracking-wider w-1/6 h-[72.974px]"
     />
   </div>
 </div>

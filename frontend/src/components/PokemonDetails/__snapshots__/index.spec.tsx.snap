@@ -3,7 +3,7 @@
 exports[`Pokemon Details should be blank when there are no details 1`] = `
 <div>
   <div
-    class="bg-brown text-white font-mono tracking-wider relative"
+    class="bg-brown text-white font-mono tracking-wider w-1/6 h-[72.974px]"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`Pokemon Details should be blank when there are no details 1`] = `
 exports[`Pokemon Details should render unchanged 1`] = `
 <div>
   <div
-    class="bg-brown text-white font-mono tracking-wider relative"
+    class="bg-brown text-white font-mono tracking-wider w-1/6 h-[72.974px]"
   >
     <div
       class="flex justify-between"

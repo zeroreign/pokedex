@@ -4,7 +4,7 @@ import { capitalize } from "lodash";
 
 const PokemonDetails = ({ details }: PokemonDetailsProps) => {
   return (
-    <div className={"bg-brown text-white font-mono tracking-wider relative"}>
+    <div className={"bg-brown text-white font-mono tracking-wider w-1/6 h-[72.974px]"}>
       {details && (
         <>
           <div id="identifiers" className="flex justify-between">
