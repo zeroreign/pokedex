@@ -23,15 +23,14 @@ const FramedScreen = ({
   return (
     <div
       id="framed-screen"
-      className={`bg-white relative py-8 px-6 border-double border-black rounded-bl-[2rem] rounded-t-[0.25rem] rounded-br[0.25rem] aspect-[4/3] size-1/6`}
+      className={`bg-white relative py-8 px-6 m-2 rounded-bl-[2rem] rounded-t-[0.25rem] rounded-br[0.25rem] aspect-[4/3] w-10/12`}
     >
-      <div className="bg-black flex grow items-center justify-center relative text-white text-wrap rounded-[0.25rem] h-full w-full">
+      <div className="bg-black flex items-center justify-center relative text-white text-wrap rounded-[0.25rem] h-full w-full">
         {pokemon?.image && (
           <Image
             src={error.hasError ? "/unown-error.gif" : pokemon.image}
             alt={error.hasError ? error.errorLabel : pokemon.name}
-            width={200}
-            height={200}
+            fill={true}
             unoptimized={true}
             onError={handleError}
             className="object-contain"
