@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .shadow-border {
+    @apply shadow shadow-[#000000] border border-[#000000]
+  }
+  .inner-shadow-border {
+    @apply shadow-inner shadow-[#000000] border border-[#000000]
+  }
+}
