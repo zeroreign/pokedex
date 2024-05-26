@@ -3,55 +3,63 @@
 exports[`Pokemon Details should be blank when there are no details 1`] = `
 <div>
   <div
-    class="bg-brown text-white font-mono tracking-wider w-1/6 h-[72.974px]"
-  />
+    class="relative w-10/12 m-8"
+  >
+    <div
+      class="bg-brown text-white font-mono tracking-wider h-[84px] w-full p-1.5 rounded-[0.25rem] shadow-border"
+    />
+  </div>
 </div>
 `;
 
 exports[`Pokemon Details should render unchanged 1`] = `
 <div>
   <div
-    class="bg-brown text-white font-mono tracking-wider w-1/6 h-[72.974px]"
+    class="relative w-10/12 m-8"
   >
     <div
-      class="flex justify-between"
-      id="identifiers"
+      class="bg-brown text-white font-mono tracking-wider h-[84px] w-full p-1.5 rounded-[0.25rem] shadow-border"
     >
-      <h2>
-        # 
-        94
-      </h2>
-      <h2>
-        Gengar
-      </h2>
-    </div>
-    <ul
-      class="flex justify-evenly"
-      id="types"
-    >
-      <li>
+      <div
+        class="flex justify-between"
+        id="identifiers"
+      >
+        <h2>
+          # 
+          94
+        </h2>
+        <h2>
+          Gengar
+        </h2>
+      </div>
+      <ul
+        class="flex justify-evenly"
+        id="types"
+      >
+        <li>
+          <p>
+            Poison
+          </p>
+        </li>
+        <li>
+          <p>
+            Ghost
+          </p>
+        </li>
+      </ul>
+      <div
+        class="flex justify-evenly space-x-8"
+        id="dimentions"
+      >
         <p>
-          Poison
+          Height: 
+          15
         </p>
-      </li>
-      <li>
         <p>
-          Ghost
+          Weight: 
+          405
         </p>
-      </li>
-    </ul>
-    <div
-      class="flex justify-evenly space-x-8"
-      id="dimentions"
-    >
-      <p>
-        Height: 
-        15
-      </p>
-      <p>
-        Weight: 
-        405
-      </p>
+      </div>
     </div>
   </div>
 </div>

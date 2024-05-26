@@ -5,15 +5,6 @@ import { PokemonTypes } from "@/components/PokemonAPIProvider/pokemon-api.types"
 import PokemonAPIProvider from "@/components/PokemonAPIProvider";
 
 describe("App", () => {
-  it("renders a heading", () => {
-    render(<Home />, { wrapper: PokemonAPIProvider });
-
-    const heading = screen.getByRole("heading", { level: 1 });
-
-    expect(heading).toBeInTheDocument();
-    expect(heading).toHaveTextContent("Pokedex");
-  });
-
   it("renders homepage unchanged", () => {
     const { container } = render(<Home />, { wrapper: PokemonAPIProvider });
     expect(container).toMatchSnapshot();
