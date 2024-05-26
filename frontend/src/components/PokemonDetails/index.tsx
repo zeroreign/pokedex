@@ -7,7 +7,7 @@ const PokemonDetails = ({ details }: PokemonDetailsProps) => {
     <div className={`relative w-10/12 m-8`}>
       <div
         className={
-          "bg-brown text-white font-mono tracking-wider h-[84px] w-full p-1.5 rounded-[0.25rem]"
+          "bg-brown text-white font-mono tracking-wider shadow shadow-[#000000] border border-[#000000] h-[84px] w-full p-1.5 rounded-[0.25rem]"
         }
       >
           {details && (
