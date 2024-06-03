@@ -3,7 +3,7 @@
 exports[`Pokemon Details should be blank when there are no details 1`] = `
 <div>
   <div
-    class="relative w-10/12 m-8"
+    class="z-20 relative w-10/12 m-8"
   >
     <div
       class="bg-brown text-white font-mono tracking-wider h-[84px] w-full p-1.5 rounded-[0.25rem] shadow-border"
@@ -15,7 +15,7 @@ exports[`Pokemon Details should be blank when there are no details 1`] = `
 exports[`Pokemon Details should render unchanged 1`] = `
 <div>
   <div
-    class="relative w-10/12 m-8"
+    class="z-20 relative w-10/12 m-8"
   >
     <div
       class="bg-brown text-white font-mono tracking-wider h-[84px] w-full p-1.5 rounded-[0.25rem] shadow-border"

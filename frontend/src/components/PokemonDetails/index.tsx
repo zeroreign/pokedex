@@ -4,7 +4,7 @@ import { capitalize } from "lodash";
 
 const PokemonDetails = ({ details }: PokemonDetailsProps) => {
   return (
-    <div className={`relative w-10/12 m-8`}>
+    <div className={`z-20 relative w-10/12 m-8`}>
       <div
         className={
           "bg-brown text-white font-mono tracking-wider h-[84px] w-full p-1.5 rounded-[0.25rem] shadow-border"
