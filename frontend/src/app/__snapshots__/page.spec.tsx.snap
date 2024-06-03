@@ -6,10 +6,10 @@ exports[`App renders homepage unchanged 1`] = `
     class="bg-white h-screen flex md:flex md:flex-auto md:items-center md:justify-center"
   >
     <div
-      class="flex flex-auto flex-col items-center justify-center bg-red md:max-w-sm md:min-h-[700px] md:rounded-md static inner-shadow-border"
+      class="z-10 flex flex-auto flex-col items-center justify-center bg-red md:max-w-sm md:min-h-[700px] md:rounded-md static inner-shadow-border"
     >
       <div
-        class="bg-white relative shadow shadow-[#000000] pt-8 pl-9 pr-7 pb-11 m-2 border-double border-r-4	border-b-4 border-t-[1px] border-l border-[#000000] rounded-bl-[2.5rem] rounded-t-md rounded-br-md aspect-[4/3] w-10/12"
+        class="z-20 bg-white relative shadow shadow-[#000000] pt-8 pl-9 pr-7 pb-11 m-2 border-double border-r-4	border-b-4 border-t-[1px] border-l border-[#000000] rounded-bl-[2.5rem] rounded-t-md rounded-br-md aspect-[4/3] w-10/12"
         id="framed-screen"
       >
         <div
@@ -17,7 +17,7 @@ exports[`App renders homepage unchanged 1`] = `
         />
       </div>
       <div
-        class="relative w-10/12 m-8"
+        class="z-20 relative w-10/12 m-8"
       >
         <div
           class="bg-brown text-white font-mono tracking-wider h-[84px] w-full p-1.5 rounded-[0.25rem] shadow-border"
