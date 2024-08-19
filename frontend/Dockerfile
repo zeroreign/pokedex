@@ -1,48 +1,38 @@
 # Node version for other Docker stages
 FROM node:20-alpine AS base-node-version
 
-FROM base-node-version AS front-end-dependencies-install
-RUN mkdir -p /app && chown -R node:node /app
+FROM base-node-version AS node-dependencies
+RUN mkdir -p /app
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY --chown=node:node . .
+COPY package.json package-lock.json ./
+RUN npm ci
 
-FROM front-end-dependencies-install AS front-end-build
-ENV NODE_ENV=production
-COPY --from=front-end-dependencies-install /app/node_modules ./node_modules
-COPY src ./src
-COPY public ./public
-COPY next.config.mjs ./
-COPY tsconfig.json ./
-COPY .eslintrc.json ./
-COPY tailwind.config.ts ./
-COPY postcss.config.mjs ./
-RUN npm run lint
+FROM base-node-version AS build-prod
+WORKDIR /app
+COPY --from=node-dependencies /app/node_modules ./node_modules
 RUN npm run build
-COPY --chown=node:node . .
 
-FROM front-end-build AS fron-end-test
-COPY --from=front-end-dependencies-install /app/node_modules ./node_modules
-COPY --from=front-end-build /app//src ./src
-COPY --from=front-end-build /app//public ./public
-COPY --from=front-end-build /app/next.config.mjs ./
-COPY --from=front-end-build /app/tsconfig.json ./
-COPY --from=front-end-build /app/eslintrc.json ./
-COPY --from=front-end-build /app/tailwind.config.ts ./
-COPY --from=front-end-build /app/postcss.config.mjs ./
-COPY jest.{config,setup}.ts ./
-RUN npm run test
-COPY --chown=node:node . .
+FROM base-node-version AS runner
+WORKDIR /app
+USER node
+ENV NODE_ENV=production
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+COPY --from=build-prod /app/public/ ./public
+RUN mkdir .nextRUN chown nextjs:nodejs .next
+COPY --from=build-prod --chown=nextjs:nodejs  /app/.next/standalone ./
+COPY --from=build-prod --chown=nextjs:nodejs  /app/.next/static ./.next/static
 
-FROM front-end-build AS front-end-dev
-ENV NODE_ENV=development
-COPY --from=front-end-dependencies-install /app/node_modules ./node_modules
-COPY --from=front-end-build /app//src ./src
-COPY --from=front-end-build /app//public ./public
-COPY --from=front-end-build /app/next.config.mjs ./
-COPY --from=front-end-build /app/tsconfig.json ./
-COPY --from=front-end-build /app/tailwind.config.ts ./
-COPY --from=front-end-build /app/postcss.config.mjs ./
+USER nextjs
 EXPOSE 3000
+ENV PORT=3000
+CMD HOSTNAME="0.0.0.0" node server.js
+
+FROM base-node-version AS dev
+WORKDIR /app
+COPY --from=node-dependencies /app/node_modules ./node_modules
+COPY --from=node-dependencies /app/package*.json ./
+COPY . .
+EXPOSE 3000
+ENV PORT=3000
 CMD ["npm", "run", "dev"]
