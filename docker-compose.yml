@@ -1,0 +1,46 @@
+version: "3.8"
+
+name: pokedex
+
+services:
+  frontend:
+    image: pokedex/app:dev
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    develop:
+      watch:
+        - path: ./frontend/.
+          target: /app/.
+          action: sync
+          ignore:
+            - node_modules
+        - path: ./frontend/package.json
+          target: /app/package.json
+          action: rebuild
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+
+  backend:
+    image: pokedex/api:dev
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    develop:
+      watch:
+        - path: ./backend
+          target: /app
+          action: sync
+          ignore:
+            - node_modules
+        - path: ./backend/package.json
+          target: /app/package.json
+          action: rebuild
+    command: npm run start:dev
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: development
